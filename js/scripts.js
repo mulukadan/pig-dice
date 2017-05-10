@@ -5,6 +5,7 @@ $(document).ready(function() {
       var player2Score = 0;
       var turnScore = 0;
       var activePlayer = 1;
+      var result =1;
 
       $("#computer").click(function(event) {
         $("#compimg").attr("src","img/computeractive.png");
@@ -51,7 +52,7 @@ $(document).ready(function() {
         setTimeout(
           function()
           {
-          var result = dice.roll();
+           result = dice.roll();
 
             if (result === 6) {
               $("#diceimg").attr("src","img/s6.png");
@@ -101,7 +102,12 @@ $(document).ready(function() {
           $(".player").text(player2);
           $(".player2").css("background-color", "#7e9186");
           $(".player1").css("background-color", "transparent");
+          // Computer auto Play
+          if(player2 === "Computer"){
+            computerPlay();
+          }
         }
+
       }
       $("#passbtn").click(function(event) {
         if(activePlayer === 1){
@@ -113,7 +119,7 @@ $(document).ready(function() {
           }else{
             $(".playsection").hide();
             $(".winnerSection").show();
-            $(".winner").text("Winner is" + player1);
+            $(".winner").text(player1);
           }
         }else {
           player2Score = player2Score + turnScore;
@@ -124,11 +130,27 @@ $(document).ready(function() {
           }else{
             $(".playsection").hide();
             $(".winnerSection").show();
-            $(".winner").text("Winner is" + player2);
+            $(".winner").text(player2);
           }
         }
         turnScore = 0;
         $(".turnScore").text(turnScore);
       });
 
+      function computerPlay() {
+              $("#rollbtn").click();
+              var delayMillis = 2000; //1 second
+
+              setTimeout(function() {
+                //your code to be executed after 1 second
+                console.log(result);
+                if(result > 1){
+                  if (turnScore>20) {
+                    $("#passbtn").click();
+                  } else {
+                    computerPlay();
+                  }
+                }
+              }, delayMillis);
+            }
     });
