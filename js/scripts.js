@@ -96,6 +96,8 @@ $(document).ready(function() {
           $(".player").text(player1);
           $(".player1").css("background-color", "#7e9186");
           $(".player2").css("background-color", "transparent");
+          $('#rollbtn').prop('disabled', false);
+          $('#passbtn').prop('disabled', false);
           // background-color: #05b553;
 
         } else {
@@ -104,10 +106,15 @@ $(document).ready(function() {
           $(".player1").css("background-color", "transparent");
           // Computer auto Play
           if(player2 === "Computer"){
-            computerPlay();
+            $('#rollbtn').prop('disabled', true);
+            $('#passbtn').prop('disabled', true);
+            var delayMillis = 2000; //2 second
+            setTimeout(function() {
+              //your code to be executed after 2 second
+              computerPlay();
+            }, delayMillis);
           }
         }
-
       }
       $("#passbtn").click(function(event) {
         if(activePlayer === 1){
@@ -139,11 +146,10 @@ $(document).ready(function() {
 
       function computerPlay() {
               $("#rollbtn").click();
-              var delayMillis = 2000; //1 second
+              var delayMillis = 2000; //2 second
 
               setTimeout(function() {
-                //your code to be executed after 1 second
-                console.log(result);
+                //your code to be executed after 2 second
                 if(result > 1){
                   if (turnScore>20) {
                     $("#passbtn").click();
