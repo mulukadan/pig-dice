@@ -4,6 +4,7 @@ $(document).ready(function() {
       var player1Score = 0;
       var player2Score = 0;
       var turnScore = 0;
+      var activePlayer = 1;
 
       $("#computer").click(function(event) {
         $("#compimg").attr("src","img/computeractive.png");
@@ -31,6 +32,7 @@ $(document).ready(function() {
         player1Score = 0;
         player2Score = 0;
         turnScore = 0;
+        activePlayer = 1;
 
         $(".player1").text(player1);
         $(".player2").text(player2);
@@ -38,36 +40,16 @@ $(document).ready(function() {
         $(".player1Score").text(player1Score);
         $(".player2Score").text(player2Score);
         $(".turnScore").text(turnScore);
+        changeplayer(activePlayer);
       });
 
-      // $("#rollbtn").click(function(event) {
-      //
-      //   setTimeout(
-      //     function()
-      //     {
-      //       $("#diceimg").attr("src","img/r2web.gif");
-      //     }, 1000);
-      //   var result = dice.roll();
-      //   if (result === 6) {
-      //     $("#diceimg").attr("src","img/s6.png");
-      //   } else if (result === 5) {
-      //     $("#diceimg").attr("src","img/s5.png");
-      //   } else if (result === 4) {
-      //     $("#diceimg").attr("src","img/s4.png");
-      //   } else if (result === 3) {
-      //     $("#diceimg").attr("src","img/s3.png");
-      //   } else if (result === 2) {
-      //     $("#diceimg").attr("src","img/s2.png");
-      //   } else{
-      //     $("#diceimg").attr("src","img/s1.png");
-      //   }
-      // });
       $("#rollbtn").click(function(event) {
-       $("#diceimg").attr("src","img/r2web.gif");
+        $("#diceimg").attr("src","img/r2web.gif");
         setTimeout(
           function()
           {
-            var result = dice.roll();
+          var result = dice.roll();
+
             if (result === 6) {
               $("#diceimg").attr("src","img/s6.png");
             } else if (result === 5) {
@@ -81,8 +63,20 @@ $(document).ready(function() {
             } else{
               $("#diceimg").attr("src","img/s1.png");
             }
+            if (result>1) {
+              turnScore = turnScore + result;
+              $(".turnScore").text(turnScore);
+            } else {
+              turnScore = 0;
+              $(".turnScore").text(turnScore);
+              if(activePlayer === 1){
+                activePlayer = 2;
+              }else {
+                activePlayer = 1;
+              }
+              changeplayer(activePlayer);
+            }
           }, 1000);
-
       });
 
       var dice = {
@@ -93,6 +87,36 @@ $(document).ready(function() {
         }
       }
 
+      function changeplayer(player) {
+        if (player === 1) {
+          $(".player").text(player1);
+          $(".player1").css("background-color", "#7e9186");
+          $(".player2").css("background-color", "transparent");
+          // background-color: #05b553;
+
+        } else {
+          $(".player").text(player2);
+          $(".player2").css("background-color", "#7e9186");
+          $(".player1").css("background-color", "transparent");
+        }
+
+      }
+
+      $("#passbtn").click(function(event) {
+        if(activePlayer === 1){
+          player1Score = player1Score + turnScore;
+          $(".player1Score").text(player1Score);
+          activePlayer = 2;
+          changeplayer(activePlayer);
+        }else {
+          player2Score = player2Score + turnScore;
+          $(".player2Score").text(player2Score);
+          activePlayer = 1;
+          changeplayer(activePlayer);
+        }
+        turnScore = 0;
+        $(".turnScore").text(turnScore);
+      });
 
 
 

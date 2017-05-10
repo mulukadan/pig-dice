@@ -18,7 +18,7 @@
         <div class="row">
           <div class="col-md-4">
             <h3>Play against</h3>
-            <div class="player">
+            <div class="playerRadiobtn">
               <div class="radio">
                   <label><input type="radio" id="computer" name="optradio" value="computer" checked="checked"><img id="compimg" src="img/computeractive.png" alt=""> <p>Computer</p></label>
                 </div>
@@ -33,7 +33,7 @@
               <img id="diceimg" src="img/s1.png" alt="">
               <h2>Player: <span class="player"></span></h2>
               <button id="rollbtn"type="button" class="btn btn-success">Roll Dice</button>
-              <button type="button" class="btn btn-warning">Pass Turn</button>
+              <button id="passbtn" type="button" class="btn btn-warning">Pass Turn</button>
             </div>
           </div>
           <div class=" col-sm-4">
@@ -41,12 +41,12 @@
               <h2 id="scoreBoard">Score Board</h2>
               <div class="col-md-6">
                 <img id="ply1img" src="img/playerc.png" alt="">
-                <span class="player1"></span>
+                <p><h3><span class="player1"></span></h3></p>
                 <h2><span class="player1Score"></span></h2>
               </div>
               <div class="col-md-6">
                 <img id="ply2img" src="img/laptop.png" alt="">
-                <span class="player2"></span>
+                <p><h3><span class="player2"></span></h3></p>
                 <h2><span class="player2Score"></span></h2>
               </div>
               <h1>Score: <span class="turnScore"></span></h1>

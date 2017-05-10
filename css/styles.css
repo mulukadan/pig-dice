@@ -37,3 +37,9 @@ margin-left: 40%;
 .scoresection{
   display: none;
 }
+.player1, .player2{
+    /*color: green;*/
+    /*background-color: #05b553;*/
+    border-radius: 5px;
+    padding: 10px;
+}
