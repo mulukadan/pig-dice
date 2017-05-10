@@ -41,6 +41,8 @@ $(document).ready(function() {
         $(".player2Score").text(player2Score);
         $(".turnScore").text(turnScore);
         changeplayer(activePlayer);
+        $(".homepage").hide();
+        $(".rules").hide();
         $(".winnerSection").hide();
       });
 
