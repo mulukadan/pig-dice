@@ -41,6 +41,7 @@ $(document).ready(function() {
         $(".player2Score").text(player2Score);
         $(".turnScore").text(turnScore);
         changeplayer(activePlayer);
+        $(".winnerSection").hide();
       });
 
       $("#rollbtn").click(function(event) {
@@ -99,25 +100,33 @@ $(document).ready(function() {
           $(".player2").css("background-color", "#7e9186");
           $(".player1").css("background-color", "transparent");
         }
-
       }
-
       $("#passbtn").click(function(event) {
         if(activePlayer === 1){
           player1Score = player1Score + turnScore;
           $(".player1Score").text(player1Score);
-          activePlayer = 2;
-          changeplayer(activePlayer);
+          if(player1Score<100){
+            activePlayer = 2;
+            changeplayer(activePlayer);
+          }else{
+            $(".playsection").hide();
+            $(".winnerSection").show();
+            $(".winner").text("Winner is" + player1);
+          }
         }else {
           player2Score = player2Score + turnScore;
           $(".player2Score").text(player2Score);
-          activePlayer = 1;
-          changeplayer(activePlayer);
+          if(player2Score<100){
+            activePlayer = 1;
+            changeplayer(activePlayer);
+          }else{
+            $(".playsection").hide();
+            $(".winnerSection").show();
+            $(".winner").text("Winner is" + player2);
+          }
         }
         turnScore = 0;
         $(".turnScore").text(turnScore);
       });
-
-
 
     });

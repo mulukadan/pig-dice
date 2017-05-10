@@ -14,10 +14,10 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h2>Lets Play PIG Dice:</h2>
+        <h1>PIG Dice Game:</h1>
         <div class="row">
           <div class="col-md-4">
-            <h3>Play against</h3>
+            <h3>Play against:</h3>
             <div class="playerRadiobtn">
               <div class="radio">
                   <label><input type="radio" id="computer" name="optradio" value="computer" checked="checked"><img id="compimg" src="img/computeractive.png" alt=""> <p>Computer</p></label>
@@ -29,14 +29,42 @@
             <button id="playbtn" type="button" class="btn btn-primary" width = "20">PLAY PIG DICE</button>
           </div>
           <div class=" col-sm-4">
+            <div class="homepage">
+              <img src="img/dice.png" alt="">
+              <p>Choose your Opponent</p>
+              <p>and Start the Game</p>
+
+            </div>
             <div class="playsection">
               <img id="diceimg" src="img/s1.png" alt="">
               <h2>Player: <span class="player"></span></h2>
               <button id="rollbtn"type="button" class="btn btn-success">Roll Dice</button>
               <button id="passbtn" type="button" class="btn btn-warning">Pass Turn</button>
             </div>
+            <div class="winnerSection">
+              <h1>Our Winner is:</h1>
+              <p><h2><span class="winner"></span></h2></p>
+            </div>
           </div>
           <div class=" col-sm-4">
+            <div class="rules">
+              <h3 >How to Play Pig Dice Game</h3>
+              <h4>Objective</h4>
+              <p>
+                The objective of Pig Dice Game is to score 100 points before the opponent(s) do(es). The game is played with a single six-sided die.
+              </p>
+              <h4>
+                <br />
+              Gameplay</h4>
+              <p>
+                Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
+
+                <p>If the player rolls a 1, they score nothing and it becomes the next player's turn.</p>
+                <p>If the player rolls any other number, it is added to their turn total and the player's turn continues.</p>
+                <p>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</p>
+              </p>
+
+            </div>
             <div class="scoresection">
               <h2 id="scoreBoard">Score Board</h2>
               <div class="col-md-6">
