@@ -1,11 +1,22 @@
-# Triangle Tracker
-This  a web page that allows the user to input the lengths of the sides of a triangle, and returns whether these sides form an equilateral, isosceles, or scalene triangle or if the sides cannot make a triangle at all. Here are the definitions of each possibility:
+# PIG DICE GAME
 
-- Equilateral: All sides are equal.
-- Isosceles: Exactly 2 sides are equal.
-- Scalene: No sides are equal.
-- NOT a triangle: The sum of the lengths of any two sides of a triangle is less than or equal to the length of the third side.
-# Author:
+## How to Play Pig Dice Game
+### Objective
 
-  ## Mulu Kadan
-  @MoringaSchool2017.
+The objective of Pig Dice Game is to score 100 points before the opponent(s) do(es). The game is played with a single six-sided die.
+
+
+### Gameplay
+
+Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
+
+- If the player rolls a 1, they score nothing and it becomes the next player's turn.
+
+- If the player rolls any other number, it is added to their turn total and the player's turn continues.
+
+- If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
+
+##  Project BY:
+### Mulu Kadan
+
+@Moringa 2017
