@@ -31,12 +31,17 @@ $(document).ready(function() {
       $("#computer").click(function(event) {
         $("#compimg").attr("src","img/computeractive.png");
         $("#friendimg").attr("src","img/friends.png");
+        $("#ply1img").attr("src","img/playerc.png");
+        $("#ply2img").attr("src","img/laptop.png");
+
 
         // event.preventDefault();
       });
       $("#friend").click(function(event) {
         $("#compimg").attr("src","img/computer.png");
         $("#friendimg").attr("src","img/friendactive.png");
+        $("#ply1img").attr("src","img/playera.png");
+        $("#ply2img").attr("src","img/playerb.png");
 
         // event.preventDefault();
       });
