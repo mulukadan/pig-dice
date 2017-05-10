@@ -18,8 +18,22 @@ border-radius: 0px;
 float: right;
 margin-left: 40%;
 }
+#scoreBoard{
+  padding-left: 30px;
+}
+.img{
+   margin: 0 auto;
+}
 .footer {
   position: absolute;
   bottom: 0px;
  left: 40%;
+}
+
+/*on loading*/
+.playsection{
+  display: none;
+}
+.scoresection{
+  display: none;
 }

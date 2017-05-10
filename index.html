@@ -26,24 +26,30 @@
                   <label><input type="radio" id="friend" name="optradio" value="friend"><img id="friendimg"  src="img/friends.png" alt=""><p>Friend</p></label>
                 </div>
             </div>
+            <button id="playbtn" type="button" class="btn btn-primary" width = "20">PLAY PIG DICE</button>
           </div>
           <div class=" col-sm-4">
-            <!-- <img src="img/s6.png" alt=""> -->
-            <img id="diceimg" src="img/r2web.gif" alt="">
-            <h2>Player: <span class="player"></span></h2>
-            <button type="button" class="btn btn-success">Roll Dice</button>
-            <button type="button" class="btn btn-warning">Pass Turn</button>
-
-          </div>
-          <div class=" col-sm-4">
-            <h2>Score Board</h2>
-            <div class="col-md-6">
-              <img id="ply1img" src="img/playerc.png" alt="">
-              <span class="playera"></span>
+            <div class="playsection">
+              <img id="diceimg" src="img/s1.png" alt="">
+              <h2>Player: <span class="player"></span></h2>
+              <button id="rollbtn"type="button" class="btn btn-success">Roll Dice</button>
+              <button type="button" class="btn btn-warning">Pass Turn</button>
             </div>
-            <div class="col-md-6">
-              <img id="ply2img" src="img/laptop.png" alt="">
-              <span class="playerb"></span>
+          </div>
+          <div class=" col-sm-4">
+            <div class="scoresection">
+              <h2 id="scoreBoard">Score Board</h2>
+              <div class="col-md-6">
+                <img id="ply1img" src="img/playerc.png" alt="">
+                <span class="player1"></span>
+                <h2><span class="player1Score"></span></h2>
+              </div>
+              <div class="col-md-6">
+                <img id="ply2img" src="img/laptop.png" alt="">
+                <span class="player2"></span>
+                <h2><span class="player2Score"></span></h2>
+              </div>
+              <h1>Score: <span class="turnScore"></span></h1>
             </div>
           </div>
 
